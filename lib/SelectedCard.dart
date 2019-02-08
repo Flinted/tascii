@@ -1,6 +1,7 @@
 // Displays one Entry.
 import 'package:flutter/material.dart';
 import 'Entry.dart';
+import 'AsciiProvider.dart';
 
 class SelectedCard extends StatelessWidget {
   const SelectedCard(this.entry);
@@ -25,8 +26,11 @@ class SelectedCard extends StatelessWidget {
             color: entry.background,
             child: Center(
                 child: Text(
-              entry.title,
-              style: TextStyle(fontSize: 160.0),
+                  lookupAscii(entry.title),
+              style: TextStyle(
+                  fontSize: 40.0,
+                fontFamily: 'RobotoMono'
+              ),
             ))));
   }
 
@@ -43,4 +47,12 @@ class SelectedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return _build();
   }
+}
+
+lookupAscii(string) {
+  var value = int.tryParse(string);
+  if (value != null) {
+    return AsciiProvider.number[value];
+  }
+  return string;
 }

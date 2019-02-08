@@ -8,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'tascii',
+      title: 'Tascii',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: TasciiPage(title: 'tascii agile estimation'),
+      home: TasciiPage(title: 'Tascii'),
     );
   }
 }
